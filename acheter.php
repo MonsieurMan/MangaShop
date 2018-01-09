@@ -1,4 +1,3 @@
-
-<div> 
-
-</div>
+<?php
+    include('chargerReferences.php');
+?>
