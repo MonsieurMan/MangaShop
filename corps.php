@@ -4,7 +4,7 @@ echo "<div id='banniere'>";
 	include ("banniere.php");
 echo "</div>";
 
-echo "<div id='centre'>";
+echo "<div class='content'>";
 	include ("contenu.php");
 echo "</div>";
 
