@@ -1,6 +1,5 @@
 <?php 
     include('connection.php'); 
-    
     if(mysqli_connect_errno()){
         printf('Echec de la connexion: %s\n"', mysqli_connect_error());
     }
@@ -9,8 +8,8 @@
     $div = "";
     
     if($result = mysqli_query($link,$query)){
-        while($row = mysqli_fetch_array($result,MYSQLI_NUM)){
-            $div = "<div>".$row[0]."</div>";
+        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            $div = "<div>".$row["idR"]."</div>";
         }
         mysqli_free_result($result);
     }
