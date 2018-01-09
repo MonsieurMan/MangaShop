@@ -1,0 +1,30 @@
+.formulaire{
+    width:300px;
+    margin:auto;
+}
+.input{
+    width: 300px;
+    height: 32px;
+    text-indent: 4px;
+    display:block;
+    margin-bottom: 8px;
+    background-color: white;
+    border: solid 1px #A0A0A0;
+
+}
+.button{
+    width: 300px;
+    height: 50px;
+    background-color: white;
+    border: solid 1px #FF8F00;
+    border-radius: 2px;
+    font-family: simplifica;
+    font-size: 22px;
+    font-weight: 500;
+    transition: background-color .5s;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #FF8F00;
+    color:white;
+}
