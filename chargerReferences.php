@@ -9,7 +9,7 @@
     $div = "";
     
     if($result = mysqli_query($link,$query)){
-        while($row = mysqli_fetch_array($result,MYSQLI_NUM)){
+        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             $div = "<div>".$row["idR"]."</div>";
         }
         mysqli_free_result($result);
