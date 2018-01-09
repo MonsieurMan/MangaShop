@@ -7,6 +7,7 @@ session_start();
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="style.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="css/acheter.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="css/vendre.css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript" src="jquery-2.2.1.min.js"></script>
 	</head>

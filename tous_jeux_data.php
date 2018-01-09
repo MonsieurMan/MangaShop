@@ -1,6 +1,7 @@
 <?php
     echo "data";
-    $link = mysqli_connect("aragon","nd304367","nd304367","nd304367") or die("Impossible de se connecter: " . mysqli_connect_errno());
+    
+    include("connection.php");
 
     $query_t = "CREATE TABLE IF NOT EXISTS Version (idV mediumint not null auto_increment, nomV varchar(40), primary key(idV));";
     if(mysqli_query($link, $query_t) === TRUE){
