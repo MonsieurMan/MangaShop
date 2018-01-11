@@ -13,7 +13,7 @@
         }
         mysqli_free_result($result);
     }
-
+    
     mysqli_close($link);
 
     echo $div;

@@ -1,4 +1,3 @@
-
 <header>
     <span class="name"><span id="blanc">Manga</span><span id="bleu">Shop</shop></span>
     <nav>
