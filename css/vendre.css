@@ -15,24 +15,36 @@ body{
     left:0;
     width:100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.30);
 }
 .titreV{
-    
+    text-shadow: #686868 1px 1px, #686868 -1px 1px, #686868 -1px -1px, #686868 1px -1px;
+    color: #F2F2F2;
+    font-size: 48px;
+    font-weight: 600;
+    font-family: simplifica;
+    width:100%;
+    text-align: center;
+    margin-top: 50px;
+}
+#orange{
+    text-shadow: #FF8F00;
+    color:#FF8F00;
 }
 .form{
     width:600px;
-    height: 700px;
+    height: 600px;
     margin:auto;
-    border: solid 3px rgba(179, 179, 179, 0.20);
+    border: solid 2px rgba(179, 179, 179, 0.20);
     position: relative;
-    background-color: #FFFFFF;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
 }
 .champs{
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    top: 60%;
+    transform: translate(-50%,-60%);
 }
 .input{
     width: 300px;
@@ -44,8 +56,21 @@ body{
     margin-bottom: 10px;
 }
 .input::placeholder{
-    color: #EF6C00;
+    color: #686868;
 }
+.selectV{
+    background:url("../images/Fbas.png") no-repeat;
+    background-position : 270px 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    text-indent: 1px;
+    text-overflow: '';
+}
+.selectV::-ms-expand{
+    display: none;
+}
+
 .button{
     width: 300px;
     height: 50px;

@@ -7,7 +7,7 @@ header{
     position:fixed;
     top:0;
     left:0;
-    background:#FF8F00;
+    background:#2F2F2E; /*#FF8F00*/
     color: white;
     width:100%;
     height:50px;
@@ -23,14 +23,21 @@ nav{
 }
 
 .name{
-    font-size:30px;
+    font-size:36px;
     font-weight:700;
     color:white;
     display:block;
-    margin-top:10px;
+    margin-top:3px;
     margin-left:50px;
 }
-
+#blanc{
+    text-shadow: #FFFFFF 1px 1px, #FFFFFF -1px 1px, #FFFFFF -1px -1px, #FFFFFF 1px -1px;
+    color:#FF8F00;
+}
+#bleu{
+    text-shadow: #FFFFFF 1px 1px, #FFFFFF -1px 1px, #FFFFFF -1px -1px, #FFFFFF 1px -1px;
+    color: #3144AC
+}
 /* Dropdown Button */
 .dropbtn {
     background: inherit;

@@ -1,6 +1,6 @@
 
 <header>
-    <span class="name">MangaShop</span>
+    <span class="name"><span id="blanc">Manga</span><span id="bleu">Shop</shop></span>
     <nav>
         <div class="dropdown">
             <button class="dropbtn">Accueil</button>
