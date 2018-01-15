@@ -12,10 +12,10 @@
         && isset($_POST["version"]) 
         && isset($_POST["categorie"])) {
         $query = "INSERT INTO Reference (idV,titre,categorie,nbPage,auteur,prix) values (".$_POST["version"].",'". $_POST["titre"]."','". $_POST["categorie"]."',". $_POST["nbPage"].",'". $_POST["auteur"]."',".$_POST["prix"].");";
-        echo $query;
+        $_SESSION['ajoute'] = false;
+        mysqli_query($link,$query) OR die (header('Location: ../?rub=vendre'));
         $_SESSION['ajoute'] = true;
-        mysqli_query($link,$query);
-        header('Location: index.php?rub=vendre'); 
+        header('Location: ../?rub=vendre'); 
     }
     
     mysqli_close($link);

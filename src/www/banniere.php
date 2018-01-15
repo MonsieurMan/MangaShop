@@ -2,7 +2,7 @@
     <span class="name"><span id="blanc">Manga</span><span id="bleu">Shop</span></span>
     <nav>
         <div class="dropdown">
-            <button class="dropbtn">Accueil</button>
+        <a href='?rub=accueil'><button class="dropbtn">Accueil</button></a>
         </div>
         <div class="dropdown">
             <button class="dropbtn">Marché</button>

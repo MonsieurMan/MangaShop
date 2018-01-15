@@ -1,2 +1,5 @@
-<h1> Bienvenue sur le WIKI - annonces <h1> 
-<br/>
+<div class="opacity">
+</div>
+<div class="accueil">
+    
+</div>

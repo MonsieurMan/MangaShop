@@ -54,6 +54,12 @@ body{
     background-color: white;
     border: solid 1px rgba(160, 160, 160, 0.45);
     margin-bottom: 10px;
+    
+}
+.input[type=number]{
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    -o-appearance: none;
 }
 .input::placeholder{
     color: #686868;
@@ -88,5 +94,23 @@ body{
     color:white;
 }
 .confAjout{
-    color:#8CEF8C;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translate(-30%,-20%);
+    color:#53dbbf;
+}
+.errAjout{
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    transform: translate(-30%,-20%);
+    color:#ED3939;
+    
+}
+.imgV{
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+    
 }

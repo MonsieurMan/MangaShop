@@ -5,7 +5,6 @@ session_start();
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=8" />
-
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/style.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/acheter.css" />
