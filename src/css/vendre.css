@@ -1,6 +1,6 @@
 body{
     /*background-color: rgba(233, 233, 233, 0.20);*/
-    background: url("../images/fond_vendre.jpg") no-repeat center center fixed;
+    background: url("../assets/images/fond_vendre.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -59,7 +59,7 @@ body{
     color: #686868;
 }
 .selectV{
-    background:url("../images/Fbas.png") no-repeat;
+    background:url("../assets/images/Fbas.png") no-repeat;
     background-position : 270px 5px;
     -moz-appearance: none;
     -webkit-appearance: none;
