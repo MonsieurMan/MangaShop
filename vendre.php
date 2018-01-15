@@ -16,5 +16,16 @@
             <input class="input" type="text" name="prix" placeholder="Prix du mange">
             <button class="button input" type="submit">Envoyer</button>
         </div>
+        <?php 
+            if(isset($_SESSION['ajoute'])){
+                if($_SESSION['ajoute'] == true){
+                    echo '<div class="confAjout">Votre manga a bien été ajouté ! </div>';
+                    $_SESSION['ajoute'] = false;
+                }
+            }
+            
+        ?>
+        
     </form>
+    
 </div>
