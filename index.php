@@ -9,6 +9,7 @@ session_start();
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/acheter.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/vendre.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/accueil.css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 
