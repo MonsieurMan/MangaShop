@@ -1,3 +1,3 @@
 <?php
-    $link = new mysqli("aragon","nd304367","nd304367","nd304367");
+    $link = new mysqli("localhost","root","root","shop");
 ?>
