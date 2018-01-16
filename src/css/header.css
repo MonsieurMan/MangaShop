@@ -19,7 +19,15 @@ nav{
     height:100%;
     position:absolute;
     top:0;
-    right:175px;
+    right:200px;
+}
+
+.panier{
+    position:absolute;
+    top:0;
+    right:50px;
+    height:100%;
+    line-height:50px;
 }
 
 .name{
@@ -96,4 +104,9 @@ nav{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background: #FFB300;
+}
+
+.montant{
+    color: #FFB300;
+    font-size:23px;
 }
