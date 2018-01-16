@@ -6,4 +6,6 @@ if (isset($_GET["rub"])) {
 }
 
 include "www/".$page.".php";
+
+
 ?>
