@@ -7,8 +7,6 @@
             echo "<div class='titre_prod'> <a class='titreD'><span id='orange'> Description du produit n°</span><span id='bleu'>".$res['idR']."</span></a></div>"
             ."<div class='detail'>"
             
-            
-
             ."<div class='detail_item'>"
             ."<div class='img_conteneur'>"
             ."<img class='img_detail' src='src/assets/images/manga.jpg' />"

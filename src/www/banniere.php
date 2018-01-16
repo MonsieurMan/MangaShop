@@ -12,4 +12,9 @@
             </div>
         </div>
     </nav>
+    <div class="panier">     
+        <?php 
+            include('src/totalPanier.php');
+        ?>
+    </div>
 </header> 

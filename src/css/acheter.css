@@ -7,18 +7,23 @@
     width:75%;
     margin:auto;
     padding-top:100px;
+    padding-bottom:100px;
     font-family:simplifica;
 }
 
 .content{
     background: white !important;
+    height:auto;
+    min-height:100%;
+    overflow:auto;
 }
 
 .item{
     padding:20px;
     max-width:200px;
     cursor: default;
-    display: inline-block;
+    display:inline-block;
+    margin-right:60px;
 }
 
 .item:hover{
@@ -86,14 +91,17 @@
 
 .panier_button{
     width:80%;
-    height:40px;
-    font-size:14px;
+    height:38px;
+    font-size:22px;
     display:block;
     background:white;
     border: solid 1px #FF8F00;
     color:#FF8F00;
     transition: background-color .7s, color .7s;
     cursor:pointer;
+    line-height:40px;
+    text-align:center;
+    text-decoration: none;
 }
 
 
