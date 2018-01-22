@@ -8,7 +8,7 @@
         printf('Table creee');
     } 
 
-    $query_t = "CREATE TABLE IF NOT EXISTS Reference (idR mediumint not null auto_increment, idV mediumint not null, titre varchar(40), categorie numeric, nbPage numeric, auteur varchar(40),prix numeric, primary key(idR,idV) , foreign key(idV) references Version(idV));";
+    $query_t = "CREATE TABLE IF NOT EXISTS Reference (idR mediumint not null auto_increment, idV mediumint not null, titre varchar(40), categorie varchar(40), nbPage numeric, auteur varchar(40),prix numeric, primary key(idR,idV) , foreign key(idV) references Version(idV));";
     if(mysqli_query($link, $query_t) === TRUE){
         printf('Table creee');
     } 

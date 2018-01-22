@@ -25,19 +25,6 @@
     }
 
     mysqli_free_result($result);
-      
+    
+    header('Location: ../../?rub=acheter');
 ?>
-
-<html>
-<body>
-<?php
-
-    if(!isset($_COOKIE[$user])) {
-        echo "Cookie named '" . $user . "' is not set!";
-    } else {
-        echo "Cookie '" . $user . "' is set!<br>";
-        printf($_COOKIE[$user]);
-    }
-?>
-</body>
-</html> 
