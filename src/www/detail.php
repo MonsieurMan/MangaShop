@@ -4,7 +4,7 @@
     echo $query;
     $result = mysqli_query($link,$query);
     $res = mysqli_fetch_array($result,MYSQLI_ASSOC);
-            echo "<div class='titre_prod'> <a class='titreD'><span id='orange'> Description du produit n°</span><span id='bleu'>".$res['idR']."</span></a></div>"
+            echo "<div class='titre_prod'> <a class='titreD'><span id='orange'> Description du produit n° </span><span id='bleu'>".$res['idR']."</span></a></div>"
             ."<div class='detail'>"
             
             ."<div class='detail_item'>"

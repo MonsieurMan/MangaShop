@@ -3,39 +3,35 @@
 
 <div class="accueil">
 <!-- Slideshow container -->
-    <div class="slideshow-container">
-
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <div class="cont_img"><img class="img_slider" src="src/assets/images/sortie.jpg" ><div>
-            <div class="text">Sorties de la semaine</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <div class="cont_img"><img class="img_slider" src="src/assets/images/fond_vendre.jpg"></div>
-            <div class="text">Caption Two</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <div class="cont_img"><img class="img_slider" src="src/assets/images/sortie.jpg"></div>
-            <div class="text">Caption Three</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" id="prev" >&#10094;</a>
-        <a class="next" id="next" >&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        </div> 
+<div class="slider">
+<ul>
+  <li id="no-js-slider-1" class="slide">
+    <a>
+    <img class="img_fond_slider" src="src/assets/images/fond_accueil1.jpg">
+    <img class="img_slider" src="src/assets/images/fond_accueil1.jpg">
+    <a class="prev" href="#no-js-slider-4">prev</a>
+    <a class="next" href="#no-js-slider-2">next</a>
+  </li>
+  <li id="no-js-slider-2" class="slide">
+    <img class="img_fond_slider" src="src/assets/images/fond_accueil2.jpg">
+    <img class="img_slider" src="src/assets/images/fond_accueil2.jpg">
+    <a class="prev" href="#no-js-slider-1">prev</a>
+    <a class="next" href="#no-js-slider-3">next</a>           
+  </li>
+  <li id="no-js-slider-3" class="slide">
+    <img class="img_fond_slider" src="src/assets/images/fond_accueil3.jpg">
+    <img class="img_slider" src="src/assets/images/fond_accueil3.jpg">
+    <a class="prev" href="#no-js-slider-2">prev</a>
+    <a class="next" href="#no-js-slider-4">next</a>           
+  </li>
+  <li id="no-js-slider-3" class="slide">
+    <img class="img_fond_slider" src="src/assets/images/fond_accueil4.jpg">
+    <img class="img_slider" src="src/assets/images/fond_accueil4.jpg">
+    <a class="prev" href="#no-js-slider-3">prev</a>
+    <a class="next" href="#no-js-slider-1">next</a>           
+  </li>
+</ul>
+</div>
         
 </div>
 

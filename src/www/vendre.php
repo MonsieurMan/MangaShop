@@ -13,7 +13,7 @@
                 <option class="optionV" value="2">Deluxe</option>
             </select>
             <input class="input" type="number" name="nbPage" placeholder="Nombre de pages" required>
-            <input class="input" type="number" name="prix" placeholder="Prix du mange" required>
+            <input class="input" type="number" name="prix" placeholder="Prix du manga" required>
             <button class="button input" type="submit">Envoyer</button>
         </div>
         <?php 
