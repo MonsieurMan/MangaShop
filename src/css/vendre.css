@@ -8,8 +8,7 @@ body{
     width: 100%;
     height:100%;
     padding-top: 75px;
-    background: url("../assets/images/fond_vendre.jpg") no-repeat center center fixed;
-    background-size: cover;
+    
 }
 .opacity{
     position: absolute;
@@ -18,6 +17,10 @@ body{
     width:100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.30);
+    background: url("../assets/images/fond_vendre.jpg") no-repeat center center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    filter: blur(4px);
 }
 .titreV{
     text-shadow: #686868 1px 1px, #686868 -1px 1px, #686868 -1px -1px, #686868 1px -1px;
@@ -27,7 +30,10 @@ body{
     font-family: simplifica;
     width:100%;
     text-align: center;
-    margin-top: 50px;
+    background-color: #2F2F2E;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding:10px;
 }
 #orange{
     text-shadow: #FF8F00;
@@ -37,10 +43,16 @@ body{
     width:600px;
     height: 600px;
     margin:auto;
-    border: solid 2px rgba(179, 179, 179, 0.20);
     position: relative;
+    top: 20%;
+    transform: translate(0%,-20%);
     background-color: rgb(233, 233, 233);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.78);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
 }
 .champs{
     position: absolute;
@@ -49,10 +61,11 @@ body{
     transform: translate(-50%,-60%);
 }
 .input{
-    width: 300px;
-    height: 32px;
+    width: 500px;
+    height: 50px;
     text-indent: 4px;
     display:block;
+    font-size: 18px;
     background-color: white;
     border: solid 1px rgba(160, 160, 160, 0.45);
     margin-bottom: 10px;
@@ -65,10 +78,14 @@ body{
 }
 .input::placeholder{
     color: #686868;
+
+    background: url("../assets/images/icone_titre.png") no-repeat;
+    background-position: 450px 12px;
+    background-size: 30px;
 }
 .selectV{
     background:url("../assets/images/Fbas.png") no-repeat;
-    background-position : 270px 5px;
+    background-position : 470px 13px;
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: white;
@@ -81,7 +98,11 @@ body{
 
 .button{
     width: 300px;
-    height: 50px;
+    height: 60px;
+    transform: translate(30%,0%);
+    background: url("../assets/images/send_b.png") no-repeat;
+    background-position: 230px 19px;
+    background-size: 30px;
     background-color: white;
     border: solid 1px #FF8F00;
     border-radius: 2px;
@@ -92,6 +113,9 @@ body{
     cursor: pointer;
 }
 .button:hover{
+    background: url("../assets/images/send_w.png") no-repeat;
+    background-position: 230px 19px;
+    background-size: 30px;
     background-color: #FF8F00;
     color:white;
 }
