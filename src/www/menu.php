@@ -1,6 +1,6 @@
 
     <?php
-        include('../connection.php');
+        include('src/connection.php');
         $query = "select * from menu where parent is NULL";
         $menu = "";
         $first = true;
