@@ -34,5 +34,3 @@
 </div>
         
 </div>
-
-<script type="text/javascript" src="src/js/accueil.js"></script>

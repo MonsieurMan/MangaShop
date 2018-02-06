@@ -10,6 +10,7 @@
   position:relative;
   height:550px;
   margin:auto;
+  margin-top:100px;
 }
 
 .content-login.s--signup .signup{
@@ -68,7 +69,7 @@
   left:0;
   width:960px;
   height:100%;
-  background-image: url('/src/assets/images/login.jpg');
+  background-image: url('../assets/images/login.jpg');
   background-size:cover;
   transition: transform 1.2s ease-in-out;
   transform: translate3d(-640px,0,0);
@@ -153,7 +154,13 @@
   border-bottom:#FF8F00 solid 1px;
   text-align:center;
   margin-top:5px;
+<<<<<<< HEAD
   padding-bottom:10px;
+=======
+  background:none;
+  outline:none;
+  padding-bottom:5px;
+>>>>>>> 799aee9243691106e1e290e2103e3a99ab926154
 }
 
 .submit_login{
