@@ -8,7 +8,7 @@
 
         if($result = mysqli_query($link,$query)){
             while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                $menu = $menu.'<div class="dropdown"><a class="dropbtn" href="?rub='.strtolower($row["nom"]).'">'.$row["nom"].'</a>';
+                $menu = $menu.'<div class="dropdown"><a class="dropbtn" href="?rub='.strtolower(str_replace("é","e",$row["nom"])).'">'.$row["nom"].'</a>';
                 $query2 = "select * from menu where parent=".$row["id"];
                 if($result2 = mysqli_query($link,$query2)){
                     while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){

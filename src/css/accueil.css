@@ -3,10 +3,6 @@
   padding: 0;
   list-style-type:none;
   }
-  @-webkit-keyframes TMNT {
-    0%  { left: 0px; }
-    100% { left: -1200px; }
-  }
   a.prev,a.next {
     height:91px;
     position:absolute;
@@ -16,7 +12,7 @@
     opacity:0.6;
     text-indent:-99999px;
     cursor:pointer;
-    -webkit-transition:opacity 200ms ease-out;
+    transition:opacity 200ms ease-out;
   }
   a.prev:hover,a.next:hover {
     opacity:1;
