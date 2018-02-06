@@ -17,6 +17,7 @@
             <button class="button input" type="submit">Envoyer</button>
         </div>
         <?php 
+            if(!$_SESSION['login']) header('Location: ?rub=login');
             if(isset($_SESSION['ajoute'])){
                 if($_SESSION['ajoute'] == true){
                     echo '<div class="confAjout"><img class="imgV" src="src/assets/images/icone_v.png" alt=""> Votre manga a bien été ajouté ! </div>';

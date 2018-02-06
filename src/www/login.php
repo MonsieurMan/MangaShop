@@ -3,11 +3,11 @@
     <h2>Ravi de vous revoir,</h2>
     <div class="input-div">
         <span>Identifiant</span>
-        <input class="input_login" type="login">
+        <input class="input_login login" type="login">
     </div>
     <div class="input-div">
         <span>Mot de passe</span>
-        <input class="input_login" type="password">
+        <input class="input_login mdp" type="password">
     </div>
     <a class="a_login" href="">Mot de passe oublié ?</a>
     <button class="submit_login">Se connecter</button>

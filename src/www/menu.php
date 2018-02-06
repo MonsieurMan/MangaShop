@@ -16,7 +16,7 @@
                             $menu = $menu.'<div class="dropdown-content">';
                             $first = false;
                         }
-                        $menu = $menu."<a href='?rub=".strtolower($row2["nom"])."'>".$row2["nom"]."</a>";
+                        $menu = $menu."<a href='?rub=".strtolower(str_replace("é","e",$row2["nom"]))."'>".$row2["nom"]."</a>";
                     }
                     if(!$first){
                         $menu = $menu.'</div>';
