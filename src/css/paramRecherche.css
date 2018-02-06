@@ -1,0 +1,9 @@
+.block{
+    display: block;
+}
+
+#paramRecherche_form{
+    width:50%;
+    margin:auto;
+    display:block;
+}

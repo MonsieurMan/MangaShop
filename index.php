@@ -13,6 +13,7 @@ session_start();
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/detail.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/login.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/marche.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/paramRecherche.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
