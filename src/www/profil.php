@@ -2,7 +2,7 @@
     <div style="font-weight:700;font-size:24px;margin-bottom:25px;">Panier</div>
     <?php
     include('src/connection.php');
-    if ($_SESSION['idUser']) {
+    if ($_SESSION['login']) {
         $idUser = $_SESSION['idUser'];
 
         $query = $linkpdo->prepare('select * from Panier p join Reference r on r.idR = p.idR where p.idU = ?');
