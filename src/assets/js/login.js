@@ -22,7 +22,8 @@ $("#connection").on("click", function() {
 				alert("loading");
 			},
 			success: function(data){
-				console.log(data);
+				console.log(data.includes('Logged'));
+				if(data.includes('Logged')) location.href = '?rub=profil'
 			},
 			error:function(data){
 				console.log(data);

@@ -1,11 +1,10 @@
 <div style="padding-top:100px">
     <?php
+        if($_SERVER['REQUEST_METHOD'] === 'GET') header('Location: ?rub=paramRecherche');
         include('src/connection.php');
-        //$query = "select * from Reference";
-
-        $query = $linkpdo->prepare("select * from Reference");
 
         $first = true;
+        $query = '';
         foreach($_POST as $key=>$value){
             if($value != ''){
                 if($first){
@@ -21,14 +20,16 @@
                         $query = $query." and $key like '%$value%'";
                 }
             }
-        }        
-        //echo $query;
+        }
 
+        $query = $linkpdo->prepare("select * from Reference" . $query);
         $query->execute();
         while($row = $query->fetch()){
-        //$result = mysqli_query($link,$query);
-       //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-            echo $row["titre"];
+            echo '<div style="width:200px;margin:auto;">' .
+                    '<p>Titre : ' . $row["titre"] . '</p>' .
+                    '<p>Prix : ' . $row['prix'] . ' €</p>' .
+                    '<p>Auteur : ' . $row['auteur'] . '</p>' .
+                '</div>';
         }
     ?>
 </div>
