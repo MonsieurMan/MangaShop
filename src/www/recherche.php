@@ -1,7 +1,10 @@
 <div style="padding-top:100px">
     <?php
         include('src/connection.php');
-        $query = "select * from Reference";
+        //$query = "select * from Reference";
+
+        $query = $linkpdo->prepare("select * from Reference");
+
         $first = true;
         foreach($_POST as $key=>$value){
             if($value != ''){
@@ -13,15 +16,18 @@
                     $first = false;
                 }else{
                     if(intval($value))
-                        $query = $query." and $key=$value";
+                        $query = $query." and $key <= $value";
                     else
                         $query = $query." and $key like '%$value%'";
                 }
             }
         }        
         //echo $query;
-        $result = mysqli_query($link,$query);
-        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+
+        $query->execute();
+        while($row = $query->fetch()){
+        //$result = mysqli_query($link,$query);
+       //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             echo $row["titre"];
         }
     ?>

@@ -1,14 +1,35 @@
 
     <?php
         include('src/connection.php');
-        $query = "select * from menu where parent is NULL";
+        //$query = "select * from menu where parent is NULL";
         $menu = "";
         $first = true;
-        mysqli_set_charset($link,'utf8');
+        //mysqli_set_charset($link,'utf8');
 
-        if($result = mysqli_query($link,$query)){
-            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+        $query = $linkpdo->prepare("select * from menu where parent is NULL");
+        $query->execute();
+        //if($result = mysqli_query($link,$query)){
+            //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            while($row = $query->fetch()){
                 $menu = $menu.'<div class="dropdown"><a class="dropbtn" href="?rub='.strtolower(str_replace("é","e",$row["nom"])).'">'.$row["nom"].'</a>';
+                $query2 = $linkpdo->prepare("select * from menu where parent=".$row["id"]);
+                $query2->execute();
+                while($row2 = $query2->fetch()){
+                    if($first){
+                        $menu = $menu.'<div class="dropdown-content">';
+                        $first = false;
+                    }
+                    $menu = $menu."<a href='?rub=".strtolower(str_replace("é","e",$row2["nom"]))."'>".$row2["nom"]."</a>";
+                }
+                
+                if(!$first){
+                    $menu = $menu.'</div>';
+                    $first = true;
+                }
+                
+                $menu= $menu.'</div>';
+            }
+                /*$menu = $menu.'<div class="dropdown"><a class="dropbtn" href="?rub='.strtolower(str_replace("é","e",$row["nom"])).'">'.$row["nom"].'</a>';
                 $query2 = "select * from menu where parent=".$row["id"];
                 if($result2 = mysqli_query($link,$query2)){
                     while($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)){
@@ -23,11 +44,11 @@
                         $first = true;
                     }
                     mysqli_free_result($result2);
-                }
-                $menu= $menu.'</div>';
-            }
-            mysqli_free_result($result);
-        }
+                    $menu= $menu.'</div>';
+                }*/
+                
+            //mysqli_free_result($result);
+        //}
         
-        mysqli_close($link);
+        //mysqli_close($link);
     ?>

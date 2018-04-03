@@ -20,7 +20,7 @@ session_start();
 
 	<body>
 	<?php
-		include ("src/www/corps.php");
+		include ("src/corps.php");
 	?>
 	<script src="src/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="src/assets/js/login.js"></script>

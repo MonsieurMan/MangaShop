@@ -4,10 +4,9 @@ $('.button_login').click(function(){
 });
 
 
-$(".submit_login").on("click", function() {
-	var login = $(".login").val();
-	var password = $(".mdp").val();
-	password = hash(password);
+$("#connection").on("click", function() {
+	var login = $("#login-input").val();
+	var password = $("#pass-input").val();
 	if(login == "" || password == "") {
 		alert("Tous les champs doivent êtres remplis");
 	}else{

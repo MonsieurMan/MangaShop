@@ -13,7 +13,7 @@
         printf('Table creee');
     } 
 
-    $query_t = "CREATE TABLE IF NOT EXISTS User (idU mediumint not null auto_increment, login varchar(40), password varchar(40), mail varchar(40), primary key(idU));";
+    $query_t = "CREATE TABLE IF NOT EXISTS User (idU mediumint not null auto_increment, login varchar(40), password mediumtext, mail varchar(40), primary key(idU));";
     if(mysqli_query($link, $query_t) === TRUE){
         printf('Table creee');
     } 
@@ -32,4 +32,9 @@
     if(mysqli_query($link, $query_t) === TRUE){
         printf('Table creee');
     } 
+    $query_t = "CREATE TABLE IF NOT EXISTS Recherche (idR int(6) auto_increment, nom varchar(50), nombre boolean, choix boolean, primary key(idR));";
+    if(mysqli_query($link, $query_t) === TRUE){
+        printf('Table creee');
+    } 
 ?>
+

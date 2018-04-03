@@ -1,11 +1,9 @@
 
 <?php
 echo "<div id='banniere'>";
-	include ("banniere.php");
+	include ("www/banniere.php");
 echo "</div>";
-
 echo "<div class='content'>";
-	include ("src/contenu.php");
+	include ("contenu.php");
 echo "</div>";
-
 ?>

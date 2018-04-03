@@ -1,11 +1,17 @@
 <?php 
     include('connection.php'); 
 
-    $query = "select * from Reference order by idR";
+    //$query = "select * from Reference order by idR";
     $div = "";
-    
-    if($result = mysqli_query($link,$query)){
-        while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+
+    $query = $linkpdo->prepare("select * from Reference order by idR");
+    $query->execute();
+
+    //if($result = mysqli_query($link,$query)){
+        while($row = $query->fetch()){
+
+        
+        //while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
             $div = $div."<div class='item' >"
             ."<figure class='figure'>"
             ."<img class='image' src='src/assets/images/manga.jpg' />"
@@ -19,11 +25,12 @@
             ."<i class='material-icons panier_icon'>add_shopping_cart</i>"
             ."</div>"
             ."</div>";
+        //}
         }
-        mysqli_free_result($result);
-    }
+        //mysqli_free_result($result);
+    //}
     
-    mysqli_close($link);
+    //mysqli_close($link);
 
     echo $div;
 ?>
