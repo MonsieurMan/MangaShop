@@ -15,7 +15,7 @@
             <a class="vendreFont"> Mettez votre manga en vente ! </a>
         </div>
         <div class="vendreButton" >
-            <a class="vendreFont" href="?rub=acheter">Vendre</a>
+            <a class="vendreFont" href="?rub=vendre">Vendre</a>
         </div>
     </div>
 </div>

@@ -5,25 +5,16 @@
 
     if(isset($_COOKIE['lucas'])){
         $panier = unserialize($_COOKIE['lucas']);    
-        
-        //$query = "select prix from Reference where idR=";
+
         $prix = 0;
         foreach($panier as $value){
             $query = $linkpdo->prepare("select prix from Reference where idR= ?");
             $query->bindParam(1,$value);
             $query->execute();
-            //if($result = mysqli_query($link,$query.$value)){
                 while($row = $query->fetch()){
                     $prix += $row['prix'];
                 }
-                /*while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                    $prix += $row['prix'];
-                }*/
-            //}
         }
-    
-        
-       // mysqli_close($link);
     
         echo '<div class="montant">Montant du panier '.$prix.'€</div>';
     }

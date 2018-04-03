@@ -24,5 +24,6 @@ session_start();
 	?>
 	<script src="src/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="src/assets/js/login.js"></script>
+    <script src="src/assets/js/profil.js"></script>
 	</body>
 </html>

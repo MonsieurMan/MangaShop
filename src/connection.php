@@ -2,7 +2,7 @@
 
    // $link = new mysqli("aragon","nd304367","nd304367","nd304367");
     try{
-        $linkpdo = new PDO('mysql:dbname=nd304367;host=aragon', "nd304367", "nd304367",array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+        $linkpdo = new PDO('mysql:dbname=shop;host=localhost', "lucas", "",array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     }
     catch(Exception $e){
         echo 'Erreur'.$e->getMessage().'<br/>';

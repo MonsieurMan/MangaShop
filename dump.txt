@@ -1,0 +1,349 @@
+-- MySQL dump 10.15  Distrib 10.0.34-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: shop
+-- ------------------------------------------------------
+-- Server version	10.0.34-MariaDB-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Panier`
+--
+
+DROP TABLE IF EXISTS `Panier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Panier` (
+  `idU` mediumint(9) NOT NULL,
+  `idR` mediumint(9) NOT NULL,
+  PRIMARY KEY (`idR`,`idU`),
+  KEY `idU` (`idU`),
+  CONSTRAINT `Panier_ibfk_1` FOREIGN KEY (`idR`) REFERENCES `Reference` (`idR`),
+  CONSTRAINT `Panier_ibfk_2` FOREIGN KEY (`idU`) REFERENCES `User` (`idU`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Panier`
+--
+
+LOCK TABLES `Panier` WRITE;
+/*!40000 ALTER TABLE `Panier` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Panier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Recherche`
+--
+
+DROP TABLE IF EXISTS `Recherche`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Recherche` (
+  `idR` int(6) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) DEFAULT NULL,
+  `nombre` tinyint(1) DEFAULT NULL,
+  `choix` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`idR`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Recherche`
+--
+
+LOCK TABLES `Recherche` WRITE;
+/*!40000 ALTER TABLE `Recherche` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Recherche` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Reference`
+--
+
+DROP TABLE IF EXISTS `Reference`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Reference` (
+  `idR` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `idV` mediumint(9) NOT NULL,
+  `idU` mediumint(9) NOT NULL,
+  `titre` varchar(40) DEFAULT NULL,
+  `categorie` varchar(40) DEFAULT NULL,
+  `nbPage` decimal(10,0) DEFAULT NULL,
+  `auteur` varchar(40) DEFAULT NULL,
+  `prix` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`idR`,`idV`),
+  KEY `idV` (`idV`),
+  KEY `Reference_ibfk_2` (`idU`),
+  CONSTRAINT `Reference_ibfk_1` FOREIGN KEY (`idV`) REFERENCES `Version` (`idV`),
+  CONSTRAINT `Reference_ibfk_2` FOREIGN KEY (`idU`) REFERENCES `User` (`idU`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Reference`
+--
+
+LOCK TABLES `Reference` WRITE;
+/*!40000 ALTER TABLE `Reference` DISABLE KEYS */;
+INSERT INTO `Reference` VALUES (63,2,7,'Death','dnekqjn',1,'dzkjfje',1);
+/*!40000 ALTER TABLE `Reference` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `User`
+--
+
+DROP TABLE IF EXISTS `User`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `User` (
+  `idU` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `login` varchar(40) DEFAULT NULL,
+  `password` mediumtext,
+  `mail` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`idU`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `User`
+--
+
+LOCK TABLES `User` WRITE;
+/*!40000 ALTER TABLE `User` DISABLE KEYS */;
+INSERT INTO `User` VALUES (5,'Admin','c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f','Admin'),(7,'lucas','7cadab457ad8d811f134612436daaa5e5914b20dc2502865f714035b0f267680','lucas'),(8,'admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','admin');
+/*!40000 ALTER TABLE `User` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Version`
+--
+
+DROP TABLE IF EXISTS `Version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Version` (
+  `idV` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `nomV` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`idV`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Version`
+--
+
+LOCK TABLES `Version` WRITE;
+/*!40000 ALTER TABLE `Version` DISABLE KEYS */;
+INSERT INTO `Version` VALUES (1,'Normal'),(2,'Deluxe');
+/*!40000 ALTER TABLE `Version` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `carte`
+--
+
+DROP TABLE IF EXISTS `carte`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `carte` (
+  `valeur` decimal(10,0) NOT NULL DEFAULT '0',
+  `forme` varchar(10) NOT NULL DEFAULT '',
+  `ordre` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`valeur`,`forme`),
+  KEY `forme` (`forme`),
+  CONSTRAINT `carte_ibfk_1` FOREIGN KEY (`forme`) REFERENCES `couleur` (`forme`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carte`
+--
+
+LOCK TABLES `carte` WRITE;
+/*!40000 ALTER TABLE `carte` DISABLE KEYS */;
+INSERT INTO `carte` VALUES (1,'carre',26),(1,'coeur',10),(1,'pique',35),(1,'trefle',6),(2,'carre',29),(2,'coeur',49),(2,'pique',9),(2,'trefle',21),(3,'carre',25),(3,'coeur',38),(3,'pique',15),(3,'trefle',45),(4,'carre',24),(4,'coeur',4),(4,'pique',46),(4,'trefle',50),(5,'carre',1),(5,'coeur',13),(5,'pique',19),(5,'trefle',32),(6,'carre',47),(6,'coeur',43),(6,'pique',37),(6,'trefle',5),(7,'carre',39),(7,'coeur',18),(7,'pique',52),(7,'trefle',44),(8,'carre',42),(8,'coeur',8),(8,'pique',7),(8,'trefle',23),(9,'carre',31),(9,'coeur',17),(9,'pique',27),(9,'trefle',33),(10,'carre',36),(10,'coeur',2),(10,'pique',12),(10,'trefle',3),(11,'carre',30),(11,'coeur',51),(11,'pique',11),(11,'trefle',16),(12,'carre',41),(12,'coeur',20),(12,'pique',14),(12,'trefle',40),(13,'carre',48),(13,'coeur',34),(13,'pique',28),(13,'trefle',22);
+/*!40000 ALTER TABLE `carte` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `couleur`
+--
+
+DROP TABLE IF EXISTS `couleur`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `couleur` (
+  `couleur` varchar(10) NOT NULL,
+  `forme` varchar(10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`forme`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `couleur`
+--
+
+LOCK TABLES `couleur` WRITE;
+/*!40000 ALTER TABLE `couleur` DISABLE KEYS */;
+INSERT INTO `couleur` VALUES ('rouge','carre'),('rouge','coeur'),('noir','pique'),('noir','trefle');
+/*!40000 ALTER TABLE `couleur` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `coup`
+--
+
+DROP TABLE IF EXISTS `coup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `coup` (
+  `idCoup` decimal(10,0) NOT NULL DEFAULT '0',
+  `idPartie` decimal(10,0) DEFAULT NULL,
+  `idPlayer` decimal(10,0) DEFAULT NULL,
+  `forme` varchar(10) DEFAULT NULL,
+  `valeur` decimal(10,0) DEFAULT NULL,
+  `tour` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`idCoup`),
+  KEY `idPartie` (`idPartie`),
+  KEY `idPlayer` (`idPlayer`),
+  KEY `forme` (`forme`,`valeur`),
+  CONSTRAINT `coup_ibfk_1` FOREIGN KEY (`idPartie`) REFERENCES `partie` (`id`),
+  CONSTRAINT `coup_ibfk_2` FOREIGN KEY (`idPlayer`) REFERENCES `player` (`id`),
+  CONSTRAINT `coup_ibfk_3` FOREIGN KEY (`forme`, `valeur`) REFERENCES `carte` (`forme`, `valeur`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `coup`
+--
+
+LOCK TABLES `coup` WRITE;
+/*!40000 ALTER TABLE `coup` DISABLE KEYS */;
+/*!40000 ALTER TABLE `coup` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu`
+--
+
+DROP TABLE IF EXISTS `menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `parent` int(6) unsigned DEFAULT NULL,
+  `nom` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `parent` (`parent`),
+  CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu`
+--
+
+LOCK TABLES `menu` WRITE;
+/*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` VALUES (1,NULL,'Accueil'),(2,NULL,'Marché'),(3,2,'Acheter'),(4,2,'Vendre'),(5,NULL,'Compte'),(6,5,'Profil'),(7,5,'Déconnexion'),(8,NULL,'Recherche');
+/*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `partie`
+--
+
+DROP TABLE IF EXISTS `partie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `partie` (
+  `id` decimal(10,0) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `partie`
+--
+
+LOCK TABLES `partie` WRITE;
+/*!40000 ALTER TABLE `partie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `partie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `player`
+--
+
+DROP TABLE IF EXISTS `player`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `player` (
+  `id` decimal(10,0) NOT NULL DEFAULT '0',
+  `name` varchar(25) DEFAULT NULL,
+  `idPartie` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idPartie` (`idPartie`),
+  CONSTRAINT `player_ibfk_1` FOREIGN KEY (`idPartie`) REFERENCES `partie` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `player`
+--
+
+LOCK TABLES `player` WRITE;
+/*!40000 ALTER TABLE `player` DISABLE KEYS */;
+/*!40000 ALTER TABLE `player` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `titreRecherche`
+--
+
+DROP TABLE IF EXISTS `titreRecherche`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `titreRecherche` (
+  `id` int(6) unsigned NOT NULL,
+  `titre` varchar(40) DEFAULT NULL,
+  `categorie` varchar(30) DEFAULT NULL,
+  `nbPage` int(6) DEFAULT NULL,
+  `auteur` varchar(40) DEFAULT NULL,
+  `prix` int(6) DEFAULT NULL,
+  `nomV` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `titreRecherche`
+--
+
+LOCK TABLES `titreRecherche` WRITE;
+/*!40000 ALTER TABLE `titreRecherche` DISABLE KEYS */;
+/*!40000 ALTER TABLE `titreRecherche` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-04-03 16:11:28

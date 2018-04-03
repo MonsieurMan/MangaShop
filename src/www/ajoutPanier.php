@@ -1,6 +1,6 @@
 <?php
     include('../connection.php');
-
+    session_start();
     $user='lucas';
     $id_param=$_GET['id'];
     /*unset($_COOKIE[$user]);
@@ -25,6 +25,17 @@
     }
 
     if(!$dedans){
+        $query = $linkpdo->prepare('insert into Panier(idR,idU) values(?,?)');
+        $idU = $_SESSION['idUser'];
+        $query->bindParam(1, $id_param);
+        $query->bindParam(2, $idU);
+        try
+        {
+            $query->execute();
+        }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
         array_push($panier,$row[0]['idR']);
         setcookie($user,serialize($panier),time()+(86400 * 30),'/');
     }
